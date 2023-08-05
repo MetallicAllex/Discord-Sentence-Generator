@@ -1,0 +1,155 @@
+@font-face {
+    font-family: "gg sans medium";
+    src: url(./fonts/ggsans-Medium.woff2);
+}
+
+body {
+    font-family: "gg sans medium";
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: #323338;
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.message-container {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding-left: 0.55cm;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+input {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+}
+
+div.message {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.user-name {
+    transform: translateY(-8px);
+    font-size: 24px;
+    color: #8f52a8;
+    /* 使用你喜欢的颜色，这里使用的是蓝色（#007bff） */
+}
+
+/* 名称上方距离 */
+.message-text {
+    transform: translateY(-5px);
+    font-family: "gg sans medium";
+    font-size: 24px;
+}
+
+button {
+    margin-left: 10px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #7289da;
+    color: #fff;
+    cursor: pointer;
+}
+
+.message {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.user-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.user-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user-name {
+    font-weight: bold;
+}
+
+.message-time {
+    font-size: 16px;
+    color: #888;
+    margin: 3px 0 0 10px;
+}
+
+/* 设置窗体 */
+.modal {
+    color: black !important;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 特殊身份组加的图标 */
+.special-role-icon {
+    width: 20px;
+    height: 20px;
+    background-image: url("./lowiro.webp");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 5px;
+    /* 根据需要调整边距 */
+}
+
+/* 调整 .user-name 容纳图标 */
+.user-name {
+    display: flex;
+    align-items: center;
+}
