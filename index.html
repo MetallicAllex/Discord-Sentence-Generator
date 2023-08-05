@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Chat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="message-container" id="messageContainer">
+            <!-- 消息将会显示在这里 -->
+        </div>
+        <div class="input-container">
+            <input type="text" id="userInput" placeholder="输入要发送的内容">
+            <button id="sendButton">发送</button>
+            <button id="settingsButton">设置</button>
+        </div>
+    </div>
+    <!-- 设置窗体  -->
+    <div id="settingsModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>设置</h2>
+            <label for="usernameInput">名称:</label>
+            <input type="text" id="usernameInput" placeholder="输入显示名称"><br />
+            <label for="avatarInput">头像（点击上传）:</label>
+            <input type="file" id="avatarInput" accept="image/*">
+            <hr>
+            <label for="showIconCheckbox">显示 lowiro 图标</label>
+            <input type="checkbox" id="showIconCheckbox"><br /><br />
+            <button id="saveSettingsButton">保存</button>
+            <p>本项目开源，链接在<a href="" style="text-decoration: none;"> 这里</a></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
