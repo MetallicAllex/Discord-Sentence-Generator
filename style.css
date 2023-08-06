@@ -187,3 +187,17 @@ button {
     display: flex;
     align-items: center;
 }
+
+a,
+a:visited {
+    text-decoration: none;
+    color: #91dfff;
+}
+
+.footer-content {
+    font-size: 13px;
+}
+
+.outside-border {
+    margin: 0;
+}
