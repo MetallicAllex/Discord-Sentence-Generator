@@ -49,7 +49,7 @@ div.message {
     transform: translateY(-8px);
     font-size: 24px;
     color: #8f52a8;
-    /* 使用你喜欢的颜色，这里使用的是蓝色（#007bff） */
+    /* 使用你喜欢的颜色，这里使用的是身份组对应颜色（#8f52a8） */
 }
 
 /* 名称上方距离 */
@@ -75,45 +75,32 @@ button {
     margin-bottom: 10px;
 }
 
-/* 为user-avatar类设置固定的宽度和高度，并保持头像居中 */
+/* 为头像设置固定宽高，并居中 */
 .user-avatar {
     width: 40px;
-    /* 设置头像的宽度 */
     height: 40px;
-    /* 设置头像的高度 */
     border-radius: 50%;
-    /* 将头像设置为圆形，如果头像是方形的话 */
     flex-shrink: 0;
     /* 禁止头像容器缩小 */
     display: flex;
-    /* 使用 Flexbox 布局 */
     justify-content: center;
-    /* 水平居中 */
     align-items: center;
-    /* 垂直居中 */
     background-size: cover;
-    /* 保持原比例，不缩放头像 */
     background-repeat: no-repeat;
-    /* 不重复显示头像 */
 }
 
-/* 设置头像中的img元素宽度和高度为100% */
 .user-avatar img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* 保持图片比例并填充整个容器 */
+    /* 保持图片比例，填充整个容器 */
     border-radius: 50%;
-    /* 将头像设置为圆形，如果头像是方形的话 */
 }
 
 .message-text {
-    max-width: calc(102% - 50px);
-    /* 减去头像的宽度和一定的间隔，确保文本不超出头像容器 */
+    /* 处理长文本，自动换行 */
     word-wrap: break-word;
-    /* 处理长文本，自动换行 */
     overflow-wrap: break-word;
-    /* 处理长文本，自动换行 */
     white-space: pre-line;
     /* 保留换行符并自动换行 */
 }

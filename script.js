@@ -7,18 +7,15 @@ const settingsModal = document.getElementById('settingsModal');
 const closeButton = document.querySelector('.close');
 const saveSettingsButton = document.getElementById('saveSettingsButton');
 const usernameInput = document.getElementById('usernameInput');
+
 let selectedAvatar = null;
 let showSpecialIcon = false; // 默认不显示图标
 let usernameValue = localStorage.getItem('username') || '';
+
 avatarInput.addEventListener('change', (event) => {
     const file = event.target.files[0];
     if (file && file.type.startsWith('image/')) {
         selectedAvatar = file;
-        // 对已有消息头像更改
-        const avatarImg = document.querySelectorAll('.user-avatar img');
-        avatarImg.forEach((img) => {
-            img.src = URL.createObjectURL(selectedAvatar);
-        });
     } else {
         selectedAvatar = null;
     }
@@ -30,15 +27,13 @@ sendButton.addEventListener('click', () => {
         const messageDiv = document.createElement('div');
         messageDiv.classList.add('message');
 
-        if (selectedAvatar) {
-            const userAvatarDiv = document.createElement('div');
-            userAvatarDiv.classList.add('user-avatar');
-            const avatarImg = document.createElement('img');
-            avatarImg.src = URL.createObjectURL(selectedAvatar);
-            avatarImg.alt = 'User Avatar';
-            userAvatarDiv.appendChild(avatarImg);
-            messageDiv.appendChild(userAvatarDiv);
-        }
+        const userAvatarDiv = document.createElement('div');
+        userAvatarDiv.classList.add('user-avatar');
+        const avatarImg = document.createElement('img');
+        avatarImg.src = selectedAvatar ? URL.createObjectURL(selectedAvatar) : '';
+        avatarImg.alt = 'User Avatar';
+        userAvatarDiv.appendChild(avatarImg);
+        messageDiv.appendChild(userAvatarDiv);
 
         const messageContentDiv = document.createElement('div');
         messageContentDiv.classList.add('message-content');
@@ -68,6 +63,8 @@ sendButton.addEventListener('click', () => {
         messageDiv.appendChild(messageContentDiv);
         messageContainer.appendChild(messageDiv);
         userInput.value = '';
+
+        selectedAvatar = null; // 重置 selectedAvatar，使下一条消息可以选择新的头像
     }
 });
 
